@@ -1,0 +1,33 @@
+from flask import Flask,render_template,request
+from flask_sqlalchemy import SQLAlchemy
+app=Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/user_account'
+db = SQLAlchemy(app)
+
+class user_signup(db.Model):
+    srno  = db.Column(db.Integer, primary_key=True)
+    fname = db.Column(db.String(80), unique=True, nullable=False)
+    lname = db.Column(db.String(80), unique=True, nullable=False)
+    psw   = db.Column(db.String(120), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+@app.route('/signup' ,methods =['GET','POST'])
+def signup():
+
+    if (request.method)=='POST':
+       name1= request.form.get('fname')
+       name2= request.form.get('lname')
+       psw1= request.form.get('psw')
+       email1= request.form.get('emal')
+      
+       entry=user_signup(fname=name1,lname=name2,psw=psw1,email=email1)
+       db.session.add(entry)
+       db.session.commit()
+    return render_template("signup.html")
+    
+    # return render_template("signup.html")
+# @app.route('/signin')
+# def signup():
+#     return render_template("signup.html")
+if __name__=="__main__":
+    app.run(debug=True)
+    

@@ -1,0 +1,23 @@
+
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- body of file upload and url upload  -->
+
+<div class="body" style="background-color: whitesmoke; width: 880px; height: 300px; border:0px solid;border-color:blue; margin-left: 200px;">
+
+          <form >
+                       <img style="width:200px;height:130px;margin-left: 300px; margin-top: -40px;"
+                       src="{{ url_for('static',filename='files-icon.png')}}" alt="fileupload" >
+                       <br>
+                      <label style="margin-left: 40px; margin-top:170px;"><b>Select a file:<b></label>
+                      <input type="file" id="myfile" name="myfile"><br><br>
+                      <button style="margin-top:40px;height:30px;width:100px;margin-left:70px;" type="cancel">cancel</button>
+
+                      <button style="margin-left:300px;height:30px;width:100px" type="submit">submit</button>
+                     </form>
+            
+</div>
+
+
+{% endblock %}

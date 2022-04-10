@@ -1,0 +1,44 @@
+
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- body of file upload and url upload  -->
+
+<div class="body" style="background-color: whitesmoke; width: 880px; height: 300px; border:0px solid;border-color:blue; margin-left: 200px;">
+
+<table>
+      <tr>
+
+        <!--file upload-->
+        <td style="height:295px; width:440px;border-right: 2px solid;border-color:wheat;">
+            
+                     <form >
+                       <img style="width:250px;height:180px;margin-left: 100px; margin-top: -40px;"
+                       src="{{ url_for('static',filename='files-icon.png')}}" alt="fileupload" >
+                       <br>
+                      <label for="myfile"><b>Select a file:<b></label>
+                      <input type="file" id="myfile" name="myfile"><br><br>
+                      <input  style="margin-left:300px;height:30px;width:100px" type="submit">
+                     </form>
+
+        </td>
+
+
+                <!-- url upload -->
+                <td style="height:295px; width:440px;border: 0px solid;">
+                <img style="width:250px;height:180px;margin-left: 100px;margin-top: -80px;"
+                src="{{ url_for('static',filename='url.png')}}" alt="upload url">
+                <br>
+                    <form >
+                      <label for="homepage"><b>Paste url here:<b></label>
+                      <input style="width:250px;height:30px"  type="url" id="page" name="page"> 
+                      <input style="margin-left:0px;height:33px" type="submit">
+                    </form>  
+
+                 </td>
+     </tr>
+</table>
+</div>
+
+
+{% endblock %}

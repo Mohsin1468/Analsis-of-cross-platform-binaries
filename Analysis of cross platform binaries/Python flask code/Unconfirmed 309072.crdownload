@@ -1,0 +1,52 @@
+from flask import Flask,render_template,request
+from flask_sqlalchemy import SQLAlchemy
+app=Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/user_account'
+db = SQLAlchemy(app)
+# app=Flask(__name__)
+class user_signup(db.Model):
+    srno  = db.Column(db.Integer, primary_key=True)
+    fname = db.Column(db.String(80), unique=True, nullable=False)
+    lname = db.Column(db.String(80), unique=True, nullable=False)
+    psw   = db.Column(db.String(120), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+@app.route('/home')
+def home():
+    return render_template("home.html")
+@app.route('/signin')
+def signin():
+    return render_template("signin.html")
+@app.route('/signup' ,methods =['GET','POST'])
+def signup():
+
+    if (request.method)=='POST':
+       name1= request.form.get('fname')
+       name2= request.form.get('lname')
+       psw1= request.form.get('psw')
+       email1= request.form.get('emal')
+      
+       entry=user_signup(fname=name1,lname=name2,psw=psw1,email=email1)
+       db.session.add(entry)
+       db.session.commit()
+    return render_template("signup.html")
+@app.route('/about')
+def about():
+    return render_template("about.html")
+@app.route('/feature')
+def feature():
+    return render_template("feature.html")
+@app.route('/feedback')
+def feedback():
+    return render_template("feedback.html")
+@app.route('/contact')
+def contact():
+    return render_template("contact.html")
+@app.route('/check_url')
+def check_url():
+    return render_template("check_url.html")
+@app.route('/check_file')
+def check_file():
+    return render_template("check_file.html")
+if __name__=="__main__":
+    app.run(debug=True)
+    

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<head>
+<title>Home page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/fontawesome.min.css" integrity="sha512-RUDCXG3qlIoMxuNYXWvgh3WT6t+dBpm4yzBHkLmqw3itMjBPKFtOz1/tyHrcJqtCD3lkDLH72wzbRB1/iEhEpw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<style>
+        /*@import "font-awesome-sprockets";*/
+    /*@import "font-awesome";*/
+        
+        
+        .footer{
+            border: 1px solid rgb(20, 17, 17);
+            padding:80px;
+            width:920px;
+            background-color:snow;
+            height:150px;
+        }        .foo{
+            float:right;
+            font-size: 18px;
+            font-family: serif;
+            margin:2px 0px;
+            bottom:200px;
+            border-radius: 7px;
+            width:300px;
+            padding-top: 19px;
+            padding-left: 12px;
+            height:134px;
+            margin-right: 0px;
+            position: relative;
+            color:white;
+            background-color:darkslategrey;
+        }
+        #ico{
+            width:600px;
+            height:67px;
+            font-size: 22px;
+            left:200px;
+        }
+        .social-icon{
+            display: inline-block;
+            margin-left: 45px;
+        }
+        #menu{
+            text-decoration: none;
+        }
+        .links{
+            display: inline-block;
+            text-decoration: none;
+            border-radius: 7px;
+            padding: 14px;
+            margin: 17px;
+        }
+        .bo{
+            text-decoration: none;
+            font-size: 21px;
+        }
+        .bo:hover{
+            text-decoration: underline;
+            color:black;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+
+
+
+
+<body>
+
+
+<!-- left side dive in which left menu and icon of page is defined  -->
+<div class="leftside" style="background-color:whitesmoke; width: 200px; height: 400px; float:left; border-right:2px solid;border-color: black;">
+
+
+
+
+ <!--  icon on left top define in this div-->
+
+ <div style="background-color:whitesmoke; width: 200px; height: 80px; float:left; border-right:0px solid;border-color: darkred;">
+<img src="{{ url_for('static',filename='virus-icon1.jpg')}}" alt="icon error" 
+ style="width: 150px; height: 80px; margin-left:10px;" >
+ </div>
+
+
+
+
+
+
+<!--  left side menu -->
+
+<ul class=" ulleftside">
+    <li>
+      <a href="/home"> home </a>
+    </li>
+<br>
+<br>
+
+    <li class="nav-item">
+      <a class="on" href="/check_file"> check file</a>
+    </li>
+    <br>
+    <br>
+
+    <li >
+      <a class="on" href="/check_url" > check url </a>
+    </li>
+    <br>
+    <br>
+
+
+    <li>
+      <a class="on" href="/feedback"> feedback</a>
+    </li>
+     <br>
+    <br>
+
+        <li>
+      <a class="on" href="/contact"> contact us</a>
+    </li>
+    <br>
+    <br>
+
+      <li>
+      <a class="on" href="/about"> about us</a>
+    </li>
+    <br>
+    <br>
+
+
+  </ul>
+  
+  </div>
+
+
+
+
+
+
+
+
+
+
+<!-- uper side menu -->
+
+<div class="headerside" style="background-color:whitesmoke; width: 880px; height: 100px; border:0px solid;border-color: red; margin-left:201px;">
+
+   <!-- <header class="headercss"> -->
+      <ul class="ulcss">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/feature">Features</a></li>
+        <li><a href="pricing">previous detail</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/signin">signin</a></li>
+        <li><a href="/signup">Signup</a></li>
+      </ul>
+</div>
+
+
+{% block body %} {% endblock %}
+
+
+
+
+<!-- footer  -->
+
+
+<div class="footer">
+    <div class="icons">
+        <div class="social">
+            <ul id="ico">
+                <li class="social-icon"><a href="https://www.facebook.com"><i class="fab fa-facebook  top"></i></a>
+                </li>
+                <li class="social-icon"><a href="https://www.twitter.com"><i class="fab fa-twitter top"></i></a></li>
+                <li class="social-icon"><a href="https://www.instagram.com"><i class="fab fa-instagram top"></i></a>
+                </li>
+                <li class="social-icon"><a href="https://www.tumblr.com"><i class="fab fa-tumblr top"></i></a></li>
+            </ul>
+        </div>
+
+    <div class="inner">
+            <ul id="menu"> 
+                <li class="links"><a class="bo"href="#">Home</a></li>
+                <li class="links"><a class="bo"href="#">Tutorial</a></li>
+                <li class="links"><a class="bo"href="#">Services</a></li>
+                <li class="links"><a class="bo"href="#">About Us</a></li>
+                <li class="links"><a class="bo"href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        
+    </div>
+ 
+</div>
+
+ 
+
+</body>
+</html

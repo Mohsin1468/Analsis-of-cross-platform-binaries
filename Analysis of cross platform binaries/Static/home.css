@@ -1,0 +1,82 @@
+/*  header css  */
+/*.main*/
+/*{
+  background-color:seagreen;
+  height: 70px;
+  width: 1000px;
+  margin-left: auto;
+}
+*/
+ul.ulcss{
+  float: left;
+  margin-left:20px;
+  list-style:none;
+}
+ul.ulcss li{
+width: 70px;
+height: 40px;
+float: left;
+font-style: normal;
+font-family: verdana;
+margin-right: 60px;
+margin-top: 5px;
+  
+}
+
+
+ul.ulcss li a{
+  background-color: whitesmoke;
+  display:block  ;
+  text-decoration: none;
+
+}
+
+ulleftside ul li a.on:hover{
+            color:black;
+            font-size: 18px;
+        }
+
+/*  css for footer */
+/*
+.sectioncss{
+  height: 200px;
+  width: 300px;
+  background-color: skyblue;
+  border: 1px solid;
+  border-color: maroon;
+}
+
+/*.footerdiv{
+    height: 200px;
+  width: 300px;
+  background-color: darksalmon;
+  border: 1px solid;
+  border-color: brown;
+  margin-left: 350px;
+  margin-top: -200px;
+
+}
+
+.footerdiv2{
+    height: 200px;
+  width: 300px;
+  background-color: darksalmon;
+  border: 1px solid;
+  border-color: brown;
+  margin-left: 700px;
+  margin-top: -200px;
+
+}*/
+
+
+/*  css for leftside */
+
+.ulleftside
+{
+  margin-left: -20px;
+  margin-top: 5px;
+  display: inline-block;
+  list-style: none;
+  color: whitesmoke;
+
+}
